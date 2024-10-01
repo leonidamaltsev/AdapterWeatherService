@@ -15,13 +15,10 @@ public class WeatherServiceFactory {
     }
 
     public WeatherService getWeatherService(String serviceName) {
-        switch (serviceName.toLowerCase()) {
-            case "gismeteo":
-                return gismeteoService;
-            case "anyweatherservice":
-                return anyWeatherService;
-            default:
-                throw new IllegalArgumentException("Unknown weather service: " + serviceName);
-        }
+        return switch (serviceName.toLowerCase()) {
+            case "gismeteo" -> gismeteoService;
+            case "anyweatherservice" -> anyWeatherService;
+            default -> throw new IllegalArgumentException("Unknown weather service: " + serviceName);
+        };
     }
 }
