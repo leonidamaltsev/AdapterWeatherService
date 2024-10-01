@@ -14,4 +14,5 @@ public class AdapterApplication {
     public static void main(String[] args) {
         SpringApplication.run(AdapterApplication.class, args);
     }
+
 }
